@@ -81,7 +81,7 @@ class CategoryController extends Controller
         }
     }
 
-    //actualizar una categoría
+    //actualizar una categorías
     public function update(Request $request, $id){
         //recoger los datos por post
         $json = $request->input('json', null);
