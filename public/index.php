@@ -3,6 +3,23 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
+/*Inicio CORS*/
+//CONFIGURACION DEL CORS
+//agregamos Authorization" - 'CONfigrar el XAAMP en htttpd.conf->
+//para las peticiones post, get etc
+/*<IfModule mod_headers.c>
+Header set Access-Control-Allow-Origin "*"
+</IfModule> */
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Authorization");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+$method = $_SERVER['REQUEST_METHOD'];
+if($method == "OPTIONS") {
+    die();
+}
+/*FIN CORS*/
+
 define('LARAVEL_START', microtime(true));
 
 /*
